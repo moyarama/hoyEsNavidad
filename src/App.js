@@ -2,11 +2,11 @@ import "./App.css";
 import RespuestaSi from "./components/respuestaSi/RespuestaSi";
 import RespuestaNo from "./components/respuestaNo/RespuestaNo";
 import { Fragment } from "react";
-
+ 
 const hoyEsNavidad = () => {
   const today = new Date();
 
-  return today.getMonth() === 4 && today.getDate() === 26;
+  return today.getMonth() === 11 && today.getDate() === 25;
 };
 
 const obtenerMensaje = () => {
