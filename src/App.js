@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import RespuestaSi from "./components/respuestaSi/RespuestaSi";
+import RespuestaNo from "./components/respuestaNo/RespuestaNo";
+import { Fragment } from "react";
 
-function App() {
+const hoyEsNavidad = () => {
+  const today = new Date();
+
+  return today.getMonth() === 4 && today.getDate() === 26;
+};
+
+const obtenerMensaje = () => {
+  if (hoyEsNavidad()) {
+    return <RespuestaSi />;
+  }
+  return <RespuestaNo />;
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {obtenerMensaje()}
+    </Fragment>
+
   );
-}
+};
 
 export default App;
